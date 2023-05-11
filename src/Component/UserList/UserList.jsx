@@ -67,16 +67,17 @@ const UserList = () => {
 
   const checkBoxHandler = (id, val) => {
     if (val == true) {
-      let check=true;
+      let check = true;
       teams.map(item => {
 
         if (users[id].domain == users[item].domain) {
           alert("Domain type " + users[id].domain + " already added");
-           check=false
+          check = false
         }
       })
-   if(check){
-      dispatch(teamListAdd(teams, id))}
+      if (check) {
+        dispatch(teamListAdd(teams, id))
+      }
     }
     else {
       dispatch(teamListdel(teams, id));
@@ -136,21 +137,18 @@ const UserList = () => {
       <input type='button' value="Search" onClick={() => searchHandler()} />
       <input type='button' value="Clear Filter" onClick={() => filterClearHandler()} />
     </div>
-    <div className='scroll_horizontal'>
-
-      <div className=' headers'>
-       
-        <th>Id.</th>
-        <th>First_name</th>
-        <th>Last_name</th>
-        <th>Email</th>
-        <th>Gender</th>
-        <th>Domain</th>
-        <th>Available</th>
-      
-        <th>Make Team</th>
-        
-      </div>
+    
+      <div className='scroll_horizontal'>
+        <div className=' headers'>
+          <td>Id.</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Email</td>
+          <td>Gender</td>
+          <td>Demain</td>
+          <td>Available</td>
+          <td>Make Team</td>
+        </div>
       <div className='teams_list'>
         {
           curpageuser.map(user => (
@@ -164,8 +162,8 @@ const UserList = () => {
               <td>{user.domain}</td>
 
               <td>{user.available ? "YES" : "NO"}</td>
-              
-              <td><input type="checkbox" onChange={(e) => checkBoxHandler(user.id-1, e.target.checked)} /></td>
+
+              <td><input type="checkbox" onChange={(e) => checkBoxHandler(user.id - 1, e.target.checked)} /></td>
             </>
 
 
