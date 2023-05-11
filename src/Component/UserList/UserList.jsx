@@ -63,27 +63,26 @@ const UserList = () => {
     setpage(0)
   }
 
-  
+
 
   const checkBoxHandler = (id, val) => {
-    if (val==true)
-    {  teams.map(item=>{
-      
-        if(users[id-1].domain==users[item-1].domain)
-         {
-          alert("Domain type "+users[id-1].domain+" already added");
+    if (val == true) {
+      teams.map(item => {
+
+        if (users[id - 1].domain == users[item - 1].domain) {
+          alert("Domain type " + users[id - 1].domain + " already added");
           return;
-         }
-    })
-     
-     
-      dispatch(teamListAdd(teams, id))}
-    else
-      { 
-        dispatch(teamListdel(teams, id));
-       
-      }
-    
+        }
+      })
+
+
+      dispatch(teamListAdd(teams, id))
+    }
+    else {
+      dispatch(teamListdel(teams, id));
+
+    }
+
   }
 
 
@@ -101,11 +100,11 @@ const UserList = () => {
 
       <input placeholder='Entre User Name' value={name} onChange={(e) => { setname(e.target.value); /*searchHandler()*/ }} />
       <div>
-      <label> M &nbsp; </label>
-      <input  style={{cursor: "pointer"}} type='radio' onChange={() => { setgender("Male");/* searchHandler()*/ }} name="gender" />
-      <label> &nbsp; F &nbsp; </label>
-      
-    <input  style={{cursor: "pointer"}} type='radio' onChange={() => { setgender("Female");/* searchHandler() */ }} name="gender" />
+        <label> M &nbsp; </label>
+        <input style={{ cursor: "pointer" }} type='radio' onChange={() => { setgender("Male");/* searchHandler()*/ }} name="gender" />
+        <label> &nbsp; F &nbsp; </label>
+
+        <input style={{ cursor: "pointer" }} type='radio' onChange={() => { setgender("Female");/* searchHandler() */ }} name="gender" />
       </div>
       <select
         value={domain}
@@ -124,22 +123,23 @@ const UserList = () => {
       </select>
 
 
-     <div style={{flexDirection:'column'}}>
-     <label style={{marginBottom:'5px'}}> Available </label>
-     <div >
-      <label>Yes &nbsp;</label>
-      <input  style={{cursor: "pointer"}} type='radio' onChange={() => { setavailable(true);/* searchHandler() */ }} name="ava" />
-      <label> &nbsp;No &nbsp;</label>
-     
-      <input  style={{cursor: "pointer"}} type='radio' onChange={() => { setavailable(false)/*; searchHandler() */ }} name="ava" />
-      </div>
+      <div style={{ flexDirection: 'column' }}>
+        <label style={{ marginBottom: '5px' }}> Available </label>
+        <div >
+          <label>Yes &nbsp;</label>
+          <input style={{ cursor: "pointer" }} type='radio' onChange={() => { setavailable(true);/* searchHandler() */ }} name="ava" />
+          <label> &nbsp;No &nbsp;</label>
+
+          <input style={{ cursor: "pointer" }} type='radio' onChange={() => { setavailable(false)/*; searchHandler() */ }} name="ava" />
+        </div>
       </div>
       <input type='button' value="Search" onClick={() => searchHandler()} />
       <input type='button' value="Clear Filter" onClick={() => filterClearHandler()} />
     </div>
-    <div>
+    <div className='scroll_horizontal'>
 
-      <div className=' headers'>
+      <table className=' headers'>
+       
         <th>Id.</th>
         <th>First_name</th>
         <th>Last_name</th>
@@ -147,9 +147,10 @@ const UserList = () => {
         <th>Gender</th>
         <th>Domain</th>
         <th>Available</th>
+      
         <th>Make Team</th>
-
-      </div>
+        
+      </table>
       <div className='teams_list'>
         {
           curpageuser.map(user => (
@@ -163,6 +164,7 @@ const UserList = () => {
               <td>{user.domain}</td>
 
               <td>{user.available ? "YES" : "NO"}</td>
+              
               <td><input type="checkbox" onChange={(e) => checkBoxHandler(user.id, e.target.checked)} /></td>
             </>
 

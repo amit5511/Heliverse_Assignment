@@ -21,17 +21,19 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(231, 133, 5);
+    min-width: 670px;
     
 }
-.headers>td{
+.headers>th{
     display: flex;
     justify-content: center;
-}
+    }
 .title{
     text-align: center;
     padding: 20px 0;
     background-color: azure;
     cursor: pointer;
+   
 }
 
 /*home page css*/
@@ -64,6 +66,7 @@
     justify-content:center;
     align-items: center;
     padding: 20px 10px;
+   
     gap: 5px;
 }
 .filter_header>div{
@@ -81,8 +84,34 @@
     border-radius: 10px;
     cursor: pointer;
 }
+@media screen and (max-width:830px) {
+    .filter_header{
+      
+        grid-template-columns: .5fr .6fr .5fr  ;
+        padding: 20px 10px;
+        gap: 5px;
+        
+    }
+    .scroll_horizontal{
+        overflow-x:scroll
+    }
+}
 
 
+@media screen and (max-width:636px) {
+    .filter_header{
+        grid-template-columns: .5fr .5fr ;
+        
+        padding: 20px 0px;
+  
+}
+
+}
+@media screen and (max-width:410px) {
+.filter_header>input,select{
+    max-width: 140px;
+    margin-left: 5px;
+}}
 
 @media screen and (max-width:725px) {
     .teams_list{

@@ -3,12 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-       
-min-width: 670px;
-}
-@media screen and (max-width:500px) {
-      body{
-        overflow-x: scroll;
-      }
-}
