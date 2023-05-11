@@ -53,6 +53,7 @@ const UserList = () => {
     // setname("")
     setpage(0)
   }
+
   const filterClearHandler = () => {
     dispatch(filterUser({}));
     setavailable("")
@@ -62,13 +63,29 @@ const UserList = () => {
     setpage(0)
   }
 
+  
+
   const checkBoxHandler = (id, val) => {
-    if (val == true)
-      dispatch(teamListAdd(teams, id))
+    if (val==true)
+    {  teams.map(item=>{
+      
+        if(users[id-1].domain==users[item-1].domain)
+         {
+          alert("Domain type "+users[id-1].domain+" already added");
+          return;
+         }
+    })
+     
+     
+      dispatch(teamListAdd(teams, id))}
     else
-      dispatch(teamListdel(teams, id))
-    console.log(teams);
+      { 
+        dispatch(teamListdel(teams, id));
+       
+      }
+    
   }
+
 
   const navigate = useNavigate();
   const navigateToListPage = () => {
@@ -76,6 +93,9 @@ const UserList = () => {
 
     navigate('/team')
   }
+
+
+
   return <>
     <div className='filter_header'>
 
