@@ -137,9 +137,9 @@ const UserList = () => {
       <input type='button' value="Search" onClick={() => searchHandler()} />
       <input type='button' value="Clear Filter" onClick={() => filterClearHandler()} />
     </div>
-    
-      <div className='scroll_horizontal'>
-        <div className=' headers'>
+
+    <div className='scroll_horizontal'>
+       <div className=' headers'>
           <td>Id.</td>
           <td>First Name</td>
           <td>Last Name</td>
@@ -154,6 +154,7 @@ const UserList = () => {
           curpageuser.map(user => (
 
             <>
+           
               <td>{user.id}</td>
               <td>{user.first_name}</td>
               <td>{user.last_name}</td>
