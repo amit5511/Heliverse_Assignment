@@ -67,16 +67,16 @@ const UserList = () => {
 
   const checkBoxHandler = (id, val) => {
     if (val == true) {
+      let check=true;
       teams.map(item => {
 
-        if (users[id - 1].domain == users[item - 1].domain) {
-          alert("Domain type " + users[id - 1].domain + " already added");
-          return;
+        if (users[id].domain == users[item].domain) {
+          alert("Domain type " + users[id].domain + " already added");
+           check=false
         }
       })
-
-
-      dispatch(teamListAdd(teams, id))
+   if(check){
+      dispatch(teamListAdd(teams, id))}
     }
     else {
       dispatch(teamListdel(teams, id));
@@ -165,7 +165,7 @@ const UserList = () => {
 
               <td>{user.available ? "YES" : "NO"}</td>
               
-              <td><input type="checkbox" onChange={(e) => checkBoxHandler(user.id, e.target.checked)} /></td>
+              <td><input type="checkbox" onChange={(e) => checkBoxHandler(user.id-1, e.target.checked)} /></td>
             </>
 
 

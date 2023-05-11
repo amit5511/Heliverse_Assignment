@@ -123,22 +123,18 @@
         min-width: 670px;
     }
     .teams_list>td{
-        background-color: antiquewhite;
+      
         padding: 1px;
-        cursor: pointer;
-        display: flex;
+       
         height: 35px;
-        justify-content: center;
-        align-items: center;
+       
     }
     .headers{
-        gap: 5px;
-        padding: 10px;
+       
+        padding:  1px 10px;
         display: grid;
         grid-template-columns: .3fr .6fr .6fr .5fr .6fr .8fr .3fr .4fr;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(231, 133, 5);
+       
       
     }
 }
