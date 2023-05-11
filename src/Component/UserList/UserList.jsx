@@ -138,7 +138,7 @@ const UserList = () => {
     </div>
     <div className='scroll_horizontal'>
 
-      <table className=' headers'>
+      <div className=' headers'>
        
         <th>Id.</th>
         <th>First_name</th>
@@ -150,7 +150,7 @@ const UserList = () => {
       
         <th>Make Team</th>
         
-      </table>
+      </div>
       <div className='teams_list'>
         {
           curpageuser.map(user => (
