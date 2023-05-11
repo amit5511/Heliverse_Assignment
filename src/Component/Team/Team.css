@@ -1,0 +1,115 @@
+.teams_list{
+    display: grid;
+    grid-template-columns: .3fr .6fr .6fr 0.5fr .6fr .8fr .3fr .4fr;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    gap: 5px;
+    padding: 10px;
+   
+}
+.teams_list>td{
+    background-color: antiquewhite;
+    padding: 3px;
+    cursor: pointer;
+}
+.headers{
+    gap: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: .3fr .6fr .6fr .5fr .7fr .7fr .3fr .4fr;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 133, 5);
+    
+}
+.headers>td{
+    display: flex;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    padding: 20px 0;
+    background-color: azure;
+    cursor: pointer;
+}
+
+/*home page css*/
+.pagination,.create_list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+.pagination input[type="button"]{
+    padding: 8px;
+    width: 6rem;
+    cursor: pointer;
+}
+.create_list>input{
+    padding: 8px;
+    width: 6rem;
+    cursor: pointer;
+    font-size: .9rem;
+}
+.pagination span{
+    padding: 10px;
+    
+}
+
+.filter_header{
+    display: grid;
+    font-size: 1rem;
+    grid-template-columns: .8fr .6fr .8fr .5fr .4fr .4fr ;
+    justify-content:center;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 5px;
+}
+.filter_header>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+    
+}
+.filter_header>input,select{
+    font-size: .9rem;
+    padding: 4px;
+    background-color: rgba(250, 235, 215, 0.829);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:725px) {
+    .teams_list{
+       
+        grid-template-columns: .3fr .6fr .6fr 0.5fr .6fr .8fr .3fr .4fr;
+      
+        gap: 2px;
+        padding: 5px 1px;
+        min-width: 670px;
+    }
+    .teams_list>td{
+        background-color: antiquewhite;
+        padding: 1px;
+        cursor: pointer;
+        display: flex;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+    }
+    .headers{
+        gap: 5px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: .3fr .6fr .6fr .5fr .6fr .8fr .3fr .4fr;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(231, 133, 5);
+      
+    }
+}
